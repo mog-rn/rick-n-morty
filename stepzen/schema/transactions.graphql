@@ -1,0 +1,23 @@
+type Transaction @mock {
+    transaction_id: ID!
+    transaction_amount: Float!
+    transaction_date: Date!
+    transaction_category: String!
+    to: User!
+}
+
+type User @mock {
+    user_id: ID!
+    user_name: String! @mockfn(name: "FirstName")
+    user_email: String! @mockfn(name: "Email")
+    user_password: String!
+    user_balance: Float!
+    user_transactions: [Transaction!]
+}
+
+type Query {
+    getUser(id: ID!): User
+    getUsers: [User]
+    getTransaction(transaction_id: ID!): Transaction
+    getTransactions: [Transaction]
+}
