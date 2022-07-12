@@ -1,8 +1,8 @@
 type Transaction @mock {
-    transaction_id: ID!
-    transaction_amount: Float!
-    transaction_date: Date!
-    transaction_category: String!
+    transaction_id: ID! @mockfn(name: "UUID")
+    transaction_amount: Float ! 
+    transaction_date: Date! 
+    transaction_category: String! 
     to: User!
 }
 
@@ -20,4 +20,5 @@ type Query {
     getUsers: [User]
     getTransaction(transaction_id: ID!): Transaction
     getTransactions: [Transaction]
+        @rest(endpoint: "")
 }
