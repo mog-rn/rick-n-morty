@@ -54,9 +54,11 @@ const Characters = () => {
       />
 
       <div className="space-x-10">
-        <button className="">All</button>
-        <button className="">male</button>
-        <button className="">female</button>
+        <button className="border-transparent px-2 rounded-full text-white bg-green-300">All</button>
+        <button className="border-transparent px-2 rounded-full text-white bg-blue-300">male</button>
+        <button className="border-transparent px-2 rounded-full text-white bg-pink-300">female</button>
+        <button className="border-transparent px-2 rounded-full text-white bg-red-300">Dead</button>
+        <button className="border-transparent px-2 rounded-full text-white bg-purple-300">Alive</button>
       </div>
 
       {data.locations.results
