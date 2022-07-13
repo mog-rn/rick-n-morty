@@ -1,6 +1,0 @@
-schema
-    @sdl(
-        files: ["schema/transactions.graphql"],
-    ) {
-        query: Query
-    }
