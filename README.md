@@ -3,17 +3,21 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> This is my submission for the Helicarrier code challenge. 
+This is my submission for the Helicarrier code challenge. It basically displays data from the Rick and Morty API from [here](https://studio.apollographql.com/public/rick-and-morty-a3b90u/explorer?variant=current). 
+
+Basically I decided to use Vite to generate my react app because it build much faster than the create-react-app package. This helped increase my productivity because I was able to view my progress instantly while building the application unlike when I develop react apps that are generated from the create-react-app package. For the API I settled on the Rick and Morty API since it was a nice go to API to be able to mock the functionality of my application. For the styling I settled for Tailwindcss because it enables me to write less css and focus on making the app to work with a nice UI.
 
 ### 🏠 [Homepage](https://rick-marty.vercel.app)
 
 ## Install
+Once you clone the project use this command to install all the necessary dependencies for the app to run locally.
 
 ```sh
 yarn
 ```
 
 ## Usage
+To run the application you can fire up this command to view the app on localhost.
 
 ```sh
 yarn dev
@@ -27,6 +31,3 @@ yarn dev
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
