@@ -41,14 +41,22 @@ const Characters = () => {
   if (error) {
     return <pre>{error.message}</pre>;
   }
-  
-  const handleBtn = (e: any) => {
-    const word = e.target.value
 
-    if (word === "Male") {
-      // return data.locations.results.
-    }
-  }
+  const handleBtn = (e: any) => {
+    // let filter;
+
+    // console.log(e.target.value);
+
+    // if (e.target.value === "all") {
+    //   filter = data.locations.results.map(
+    //     (location: any) => location.residents
+    //   );
+    // } else if (e.target.value === "male") {
+    //   filter = data.locations.results.residents.map(
+    //     (resident: any) => resident.gender === "male"
+    //   );
+    // }
+  };
 
   return (
     <div className="space-y-10">
@@ -60,11 +68,41 @@ const Characters = () => {
       />
 
       <div className="space-x-10">
-        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-green-300">All</button>
-        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-blue-300">male</button>
-        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-pink-300">female</button>
-        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-red-300">Dead</button>
-        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-purple-300">Alive</button>
+        <button
+          value="All"
+          onClick={handleBtn}
+          className="border-transparent px-2 rounded-full text-white bg-green-300"
+        >
+          All
+        </button>
+        <button
+          value="male"
+          onClick={handleBtn}
+          className="border-transparent px-2 rounded-full text-white bg-blue-300"
+        >
+          male
+        </button>
+        <button
+          value="female"
+          onClick={handleBtn}
+          className="border-transparent px-2 rounded-full text-white bg-pink-300"
+        >
+          female
+        </button>
+        <button
+          value="dead"
+          onClick={handleBtn}
+          className="border-transparent px-2 rounded-full text-white bg-red-300"
+        >
+          Dead
+        </button>
+        <button
+          value="alive"
+          onClick={handleBtn}
+          className="border-transparent px-2 rounded-full text-white bg-purple-300"
+        >
+          Alive
+        </button>
       </div>
 
       {data.locations.results
@@ -82,26 +120,40 @@ const Characters = () => {
             <div key={location.name}>
               <h2 className="text-4xl font-bold pb-4">{location.name}</h2>
               <div key={location.name} className="grid grid-cols-5 gap-3">
-                {location.residents.map((resident: any) => {
-                  return (
-                    <div className="">
-                      <div
-                        key={resident.id}
-                        className="flex items-start flex-col"
-                      >
-                        <p>
-                          <img src={resident.image} alt={resident.name} />
-                        </p>
-                        <div className="space-y-2">
-                          <h3>{resident.name}</h3>
-                          <h1>{resident.gender}</h1>
+                {location.residents
+                  // .filter((resident: any) => {
+                  //   if (searchTerm === "") {
+                  //     return resident;
+                  //   } else if (
+                  //     resident.gender
+                  //       .toLowerCase()
+                  //       .includes(searchTerm.toLowerCase())
+                  //   ) {
+                  //     return resident;
+                  //   }
+                  // })
+                  .map((resident: any) => {
+                    return (
+                      <div className="">
+                        <div
+                          key={resident.id}
+                          className="flex items-start flex-col"
+                        >
+                          <p>
+                            <img src={resident.image} alt={resident.name} />
+                          </p>
+                          <div className="space-y-2">
+                            <h3 className="text-lg font-semibold">
+                              {resident.name}
+                            </h3>
+                            <h1>{resident.gender}</h1>
+                          </div>
+                          <h1>{resident.status}</h1>
+                          <h1>{resident.episode.air_date}</h1>
                         </div>
-                        <h1>{resident.status}</h1>
-                        <h1>{resident.episode.air_date}</h1>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </div>
             </div>
           );
