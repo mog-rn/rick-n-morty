@@ -41,8 +41,14 @@ const Characters = () => {
   if (error) {
     return <pre>{error.message}</pre>;
   }
+  
+  const handleBtn = (e: any) => {
+    const word = e.target.value
 
-  console.log(data);
+    if (word === "Male") {
+      // return data.locations.results.
+    }
+  }
 
   return (
     <div className="space-y-10">
@@ -54,11 +60,11 @@ const Characters = () => {
       />
 
       <div className="space-x-10">
-        <button className="border-transparent px-2 rounded-full text-white bg-green-300">All</button>
-        <button className="border-transparent px-2 rounded-full text-white bg-blue-300">male</button>
-        <button className="border-transparent px-2 rounded-full text-white bg-pink-300">female</button>
-        <button className="border-transparent px-2 rounded-full text-white bg-red-300">Dead</button>
-        <button className="border-transparent px-2 rounded-full text-white bg-purple-300">Alive</button>
+        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-green-300">All</button>
+        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-blue-300">male</button>
+        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-pink-300">female</button>
+        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-red-300">Dead</button>
+        <button onClick={handleBtn} className="border-transparent px-2 rounded-full text-white bg-purple-300">Alive</button>
       </div>
 
       {data.locations.results
